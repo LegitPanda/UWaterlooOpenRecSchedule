@@ -1,12 +1,13 @@
 {
   "manifest_version": 2,
-  "name": "UwaterlooOpenRecSchedule",
-  "version": "1.0",
+  "name": "UWaterloo Open Rec Schedule",
+  "version": "1.0.2",
 
-  "description": "Makes the Uwaterloo open rec schedule more human readable",
+  "description": "Makes the UWaterloo open rec schedule more human readable",
 
   "icons": {
-    "48": "icons/border-48.png"
+    "48": "icons/icon-48.png",
+	"128": "icons/icon-128.png"
   },
 
   "content_scripts": [

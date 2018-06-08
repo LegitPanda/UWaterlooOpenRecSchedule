@@ -3,6 +3,7 @@ var filterForm = document.createElement("form");
 filterForm.id = "filterForm";
 filterForm.style.display = "flex";
 filterForm.style.margin = "2px";
+filterForm.style.marginBottom = "4px";
 filterForm.setAttribute("onsubmit","return false;")
 
 var filterLabel = document.createElement("label");
@@ -19,7 +20,7 @@ filterInput.addEventListener('input', function(e) {
   var timeoutID = setTimeout(function() {
 	unhide()
     hide()
-  }, 1000);
+  }, 500);
 });
 
 filterForm.appendChild(filterLabel);
@@ -35,7 +36,7 @@ var activities = document.getElementsByClassName("fc-title");
 function hide()
 {
 	var searchStr = filterInput.value;
-	if (String.trim(searchStr)==="")
+	if (searchStr.trim()==="")
 	{
 		return;
 	}
@@ -43,12 +44,12 @@ function hide()
 	for (var i = 0 ; i < activities.length; i++) 
 	{
 		var activity = activities.item(i);
-		if (activity.innerHTML.toLowerCase().indexOf(searchStr.toLowerCase())!==-1) 
+		if (activity.innerText.toLowerCase().indexOf(searchStr.toLowerCase())!==-1) 
 		{
-			var dateIndex = activity.innerHTML.indexOf((new Date()).getFullYear());
-			if (dateIndex!== -1)
+			var dateIndex = activity.innerText.indexOf((new Date()).getFullYear());
+			if (dateIndex!== -1 && dateIndex < 10)
 			{
-				activity.innerText = activity.innerHTML.substring(dateIndex + 6);
+				activity.innerText = activity.innerText.substring(dateIndex + 6);
 			}
 		}
 		else
