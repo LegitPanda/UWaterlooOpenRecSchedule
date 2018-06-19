@@ -56,7 +56,6 @@ function hide()
 		{
 			activity.parentNode.parentNode.style.display = 'none';
 		}
-		
 	}
 }
 

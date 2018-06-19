@@ -1,11 +1,5 @@
-console.log("UwaterlooOpenRecSchedule loaded");
-
 //to be compatible with Chrome and Edge
-window.browser = (function () {
-  return window.msBrowser ||
-    window.browser ||
-    window.chrome;
-})();
+window.browser = window.browser || window.msBrowser || window.chrome;
 
 //inject scripts
 var script = document.createElement('script');
